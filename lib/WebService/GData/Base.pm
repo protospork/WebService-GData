@@ -126,7 +126,7 @@ sub get {
     $this->_prepare_request($req);
 
     my $ret = $this->_request($req);
-    return $this->query->get('alt') =~ m/^jsonc*$/ ? from_json($ret) : $ret;
+    return $this->query->get('alt') =~ m/^jsonc*$/ ? decode_json($ret) : $ret;
 
 }
 
